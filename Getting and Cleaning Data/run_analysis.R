@@ -17,9 +17,11 @@ names(activities) <- c("activityId","activity")
 
 message("Loading Headers...")
 featureNamesRaw <- read.table("features.txt")
+
 #isolate desired columns with mean and std
 meanstdNames <- featureNamesRaw[grepl("mean|std",featureNamesRaw$V2),]
 
+#filter the columns to pull only the desired data
 message("Filtering Columns...")
 testx <- testx[,meanstdNames[,1]]
 trainx <- trainx[,meanstdNames[,1]]
@@ -54,7 +56,7 @@ tidydata <- data %>%
 tidydata <- data.frame(tidydata)
 
 
-#clean up
+#clean up unused variables
 rm(testx)
 rm(testy)
 rm(testsubject)
