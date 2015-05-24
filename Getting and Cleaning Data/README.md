@@ -14,7 +14,7 @@ The data was put into a tidy format by doing the following:
 - Descriptive activity names were added to the activities in the data set.
 - The data was grouped by student and activity by generating the mean for each variable in each group.
 
-_prior to running the package, please make sure that you have the "dplyr" package installed.  `install.packages("dplyr")`
+_prior to running the package, please make sure that you have the "dplyr" package installed.  `install.packages("dplyr")`_
 
 ###Step 1
 The raw data is divided into two folders/sets: Test and training.
