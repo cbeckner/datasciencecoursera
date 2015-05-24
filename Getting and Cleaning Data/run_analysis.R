@@ -36,6 +36,8 @@ featureNames <- gsub("\\.","",featureNames)
 featureNames <- gsub("tBody","timeBody",featureNames)
 featureNames <- gsub("tGravity","timeGravity",featureNames)
 featureNames <- gsub("fBody","freqBody",featureNames)
+featureNames <- gsub("freqBodyBody","freqBody",featureNames)
+
 
 #Combine data
 message("Merging Data...")
@@ -52,7 +54,7 @@ tidydata <- data %>%
     group_by(subjectId,activityId) %>%
     summarise_each(funs(mean)) %>%
     inner_join(activities, by="activityId") %>%
-    select(subjectId, activity, timeBodyAccMeanX:freqBodyBodyGyroJerkMagMeanFreq)
+    select(subjectId, activity, timeBodyAccMeanX:freqBodyGyroJerkMagMeanFreq)
 tidydata <- data.frame(tidydata)
 
 
